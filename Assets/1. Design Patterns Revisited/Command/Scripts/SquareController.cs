@@ -18,8 +18,11 @@ public class SquareController : MonoBehaviour
         squareSR = GetComponent<SpriteRenderer>();
         controls = new PlayerInput();
         controls.Command.Move.performed += ctx => {
-            Command command = new MoveCommand(this, ctx.ReadValue<Vector2>());
-            actionRecorder.Record(command);
+            Vector2 direction = ctx.ReadValue<Vector2>();
+            if (direction != Vector2.zero) {
+                Command command = new MoveCommand(this, direction);
+                actionRecorder.Record(command);
+            }
         };
         controls.Command.ChangeColor.performed += _ => {
             Command command = new ChangeColorCommand(this, this.squareSR.color);

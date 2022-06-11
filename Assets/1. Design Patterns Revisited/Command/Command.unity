@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionRecorder: {fileID: 342687781}
-  moveCooldown: 0.01
+  moveCooldown: 0
 --- !u!114 &342687781
 MonoBehaviour:
   m_ObjectHideFlags: 0
